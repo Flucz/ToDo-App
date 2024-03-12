@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda 2.0</title>
+
+  <link rel="stylesheet" href="style.css"> <!--Link css-->
+  <script src="app.js" defer></script> <!--Link js-->
+  <script src="calendario.js" defer></script> <!--Link js-->
+
+  <!-- BOXICONS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="container-navbar">
+    <aside class="sidebar">
+      <div class="logo-nav">
+        <i class='bx bxs-calendar nav_icon'></i>
+        <h3>Agenda</h3>
+      </div>
+      <div class="hr"></div>
+      <ul class="menu one">
+        <li class="active">
+          <a href="index.html">
+            <i class='bx bx-home active'></i>
+            <span class="active">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="horarios.html" id="horarios-link">
+            <i class='bx bx-calendar' ></i>
+            <span>Horarios</span>
+          </a>
+        </li>
+      </ul>
+      <div class="hr"></div>
+      <div class="developer">
+        <a href="index.html">Developed by Flucz</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Parte de agregar tareas -->
+  <h1>Tareas</h1>
+  <div class="wrapper">
+    <form>
+      <input id="todo-input" type="text" placeholder="Tarea que quieras agregar" autocomplete="off">
+      <button id="add-button">Agregar</button>
+    </form>
+    <ul id="todo-list">
+      <!-- agrega las tareas mediante app.js -->
+    </ul>
+  </div>
+
+  <!-- Calendario -->
+  <div class="container">
+    <div class="calendar">
+      <div class="header">
+        <div class="month"></div>
+        <div class="btns">
+          <div class="btn today-btn">
+            <i class='bx bxs-calendar' ></i>
+          </div>
+          <div class="btn prev-btn">
+            <i class='bx bx-chevron-left' ></i>
+          </div>
+          <div class="btn next-btn">
+            <i class='bx bx-chevron-right'></i>
+          </div>
+        </div>
+      </div>
+      <div class="weekdays">
+        <div class="day">Dom</div>
+        <div class="day">Lun</div>
+        <div class="day">Mar</div>
+        <div class="day">Mie</div>
+        <div class="day">Jue</div>
+        <div class="day">Vie</div>
+        <div class="day">Sab</div>
+      </div>
+      <div class="days">
+        <!-- agrega los dias mediante calendario.js -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,422 @@
+:root{
+  --background: #101114;
+  --primary-color: #1C1D20;
+  --secondary-color: #4A4D57;
+  --accent-color: #0398fc;
+  --text-color: #F9F9F9;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16pt;
+  color: var(--text-color);
+}
+body{
+  min-height: 100vh;
+  padding: 10px;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1{
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--accent-color);
+}
+.wrapper{
+  width: 700px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 30px;
+}
+
+/* ESTILOS CSS PARA EL NAVBAR */
+.container-navbar {
+  display: flex;
+  max-width: 290px;
+  width: 100%;
+  padding: 20px;
+  min-height: 110vh;
+  position: absolute;
+  left: 0px;
+}
+.sidebar {
+  min-width: 250px;
+  border-radius: 30px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+.logo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  position: relative;
+  left: -5px;
+  color: var(--accent-color);
+}
+.nav_icon{
+  margin-right: 20px;
+  font-size: 30px;
+}
+.hr {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--text-color);
+  margin: 20px 0;
+  opacity: 0.2;
+}
+.developer a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+}
+.sidebar .menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar .menu li a{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s;
+}
+.sidebar .menu li.active a i,
+.sidebar .menu li:hover a i{
+  background-color: var(--accent-color);
+  border-radius: 25%;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  line-height: 32px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+.sidebar .menu li span.active {
+  color: var(--accent-color);
+}
+.sidebar .menu.one {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .container-navbar{
+    position: absolute;
+    left: -999px;
+  }
+  .logo-nav{
+    display: none;
+  }
+  .developer{
+    display: none;
+  }
+  .sidebar{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    height: 10px;
+    top: 770px;
+    z-index: 4;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  ul.menu.one{
+    position: fixed;
+    transform: translateY(17%);
+  }
+  .sidebar li {
+    display: flex;
+    position: relative;
+    max-height: 20px;
+    top: 20px;
+    left: -20px;
+  }
+  .sidebar .hr {
+    display: none;
+  }
+  .sidebar .menu.one:last-child {
+    display: none;
+  }
+  .sidebar .menu.two {
+    display: none;
+  }
+  .sidebar .menu {
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    position: relative;
+    top: -10px;
+  }
+  .sidebar .menu li a span {
+    display: none;
+  }
+  .sidebar .menu li a i {
+    font-size: 20px;
+  }
+
+  table {
+    margin: auto;
+  }
+}
+
+/* ESTILOS CSS PARA LA TODO LIST */
+#todo-input{
+  box-sizing: border-box;
+  padding: 12px 20px;
+  width: 100%;
+  background: none;
+  border: 2px solid var(--secondary-color);
+  border-radius: 1000px;
+  font: inherit;
+  color: var(--text-color);
+  caret-color: var(--accent-color);
+}
+#todo-input:focus{
+  outline: none;
+}
+form{
+  position: relative;
+}
+#add-button{
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  background-color: var(--accent-color);
+  height: 100%;
+  padding: 0 30px;
+  border: none;
+  border-radius: 1000px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--background);
+  cursor: pointer;
+}
+.todo{
+  margin-bottom: 10px;
+  padding: 0 16px;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.todo .todo-text{
+  padding: 15px;
+  padding-right: 0;
+  flex-grow: 1;
+  transition: 200ms ease;
+}
+.delete-button{
+  padding: 3px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.delete-button svg{
+  transition: 200ms;
+}
+.delete-button:hover svg{
+  fill: #ff0033;
+}
+.custom-checkbox{
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  min-height: 20px;
+  min-width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: 200ms ease;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked ~ .custom-checkbox{
+  background-color: var(--accent-color);
+}
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+  fill: var(--primary-color);
+}
+input[type="checkbox"]:checked ~ .todo-text{
+  text-decoration: line-through;
+  color: var(--secondary-color);
+}
+input[type=checkbox]{
+  display: none;
+}
+@media(max-width: 500px){
+  html{
+    font-size: 12pt;
+  }
+  #add-button{
+    position: unset;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    height: auto;
+  }
+  h1{
+    margin-top: 50px;
+    font-size: 15vw;
+  }
+}
+
+/* ESTILOS CSS PARA EL CALENDARIO DE LA PAGINA PRINCIPAL */
+.container {
+  width: 640px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: var(--background);
+}
+.calendar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+}
+.calendar .header .month {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.calendar .header .btns {
+  display: flex;
+  gap: 10px;
+}
+.calendar .header .btns .btn {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.calendar .header .btns .btn:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+.weekdays {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.weekdays .day {
+  width: calc(100% / 7 - 10px);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.days .day {
+  width: calc(100% / 7 - 10px);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  transition: all 0.3s;
+}
+.days .day:not(.next):not(.prev):hover {
+  color: #fff;
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+.days .day.today {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}
+.days .day.next,
+.days .day.prev {
+  color: var(--secondary-color);
+}
+
+/* ESTILOS CSS PARA EL CALENDARIO DE LA PAGINA HORARIOS */
+table {
+	border-collapse: collapse;
+	text-align: center;
+	width: 1400px;
+  justify-content: center;
+  margin-top: 250px;
+  margin-left: 300px;
+  padding: 20px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, .25);
+  flex-direction: row;
+  border: 1px solid #ccc;
+}
+  
+th, td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+  
+th {
+	background-color: var(--background);
+}
+  
+td {
+	background-color: var(--background);
+}
+  
+td:first-child {
+	font-weight: bold;
+}
+  
+tr:nth-child(even) td {
+	background-color: var(--background);
+}
+  
